@@ -11,6 +11,8 @@ for k,v in stock_portfolio.items():
     print('the key is',k)
     print('the associated value is',v)
 
+print(stock_portfolio['brk.b'])
+
 '''
 print(stock_portfolio)
 print(stock_portfolio.keys())

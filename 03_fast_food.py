@@ -10,7 +10,7 @@ def display_menu(menu):
 
 shopping_cart = []
 is_still_shopping = True
-menu = ['Burgers','Pizza','Fried Chicken','Wings']
+menu = ('Burgers','Pizza','Fried Chicken','Wings')
 
 while is_still_shopping:
     if display_menu(menu) == -1:
