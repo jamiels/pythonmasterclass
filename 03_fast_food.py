@@ -3,7 +3,7 @@ def display_menu(menu):
     for n in range(0,len(menu)):
         print(n+1,':',menu[n])
     itemNo = int(input("Enter item number: "))
-    if itemNo = len(menu) + 1:
+    if itemNo == len(menu) + 1:
         return -1
     return itemNo
 
@@ -13,10 +13,11 @@ is_still_shopping = True
 menu = ('Burgers','Pizza','Fried Chicken','Wings')
 
 while is_still_shopping:
-    if display_menu(menu) == -1:
+    menu_chosen = display_menu(menu)
+    if menu_chosen == -1:
         is_still_shopping = False
     else:
-        shopping_cart.append(menu[itemNo-1])
+        shopping_cart.append(menu[menu_chosen-1])
 
     
 print("you ordered:", shopping_cart)
