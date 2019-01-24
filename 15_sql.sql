@@ -65,5 +65,25 @@ create table products (
 insert into products (product_id, description_tx) values (1,'M&Ms');
 insert into products (product_id, description_tx) values (2,'Kit Kats');
 select * from products;
+drop table orders;
+create table orders (
+	order_id int,
+    product_id int,
+    description_tx varchar(255)
+);
+
+insert into orders (order_id, product_id, description_tx) values (1,2,'Holiday purchase');
+insert into orders (order_id, product_id, description_tx) values (2,2,'Still more');
+insert into orders (order_id, product_id, description_tx) values (3,1,'Lunch');
+select * from orders;
+SET SQL_SAFE_UPDATES=0;
+update orders set description_tx='changed' where order_id=1;
+select * from orders;
+update products set product_id = 100;
+select * from products;
+select * from orders;
+
+select order_id, products.description_tx from orders, products where orders.product_id = products.product_id;
+
 
 
