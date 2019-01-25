@@ -3,6 +3,8 @@
 from flask import Flask
 from flask import request
 from flask import render_template
+from flask import redirect
+
 import mysql.connector as mc
 app = Flask(__name__)
 
@@ -16,7 +18,7 @@ def submit_order():
     quantity = request.form['quantity']
     product = request.form['product']
     insert_order(quantity,product)
-    return 'Order received!'
+    return redirect('/') #Order received!'
 
 @app.route('/orders')
 def display_orders():
